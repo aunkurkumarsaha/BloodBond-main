@@ -43,7 +43,7 @@ const HospitalDashboard = () => {
         throw new Error('No authentication token found');
       }
 
-      const response = await fetch('http://localhost:5000/api/hospitals/profile', {
+      const response = await fetch('https://bloodbond-main.onrender.com/api/hospitals/profile', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -79,7 +79,7 @@ const HospitalDashboard = () => {
         throw new Error('No authentication token found');
       }
 
-      const response = await fetch('http://localhost:5000/api/hospitals/requests', {
+      const response = await fetch('https://bloodbond-main.onrender.com/api/hospitals/requests', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -113,7 +113,7 @@ const HospitalDashboard = () => {
       const token = localStorage.getItem('token');
       if (!token) return;
 
-      const response = await fetch('http://localhost:5000/api/hospitals/nearby-donors', {
+      const response = await fetch('https://bloodbond-main.onrender.com/api/hospitals/nearby-donors', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -132,7 +132,7 @@ const HospitalDashboard = () => {
 
   const fetchEmergencyRequests = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/emergency', {
+      const response = await fetch('https://bloodbond-main.onrender.com/api/emergency', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json'
@@ -150,7 +150,7 @@ const HospitalDashboard = () => {
     try {
       setUpdateStatus({ message: 'Updating...', error: false });
       
-      const response = await fetch('http://localhost:5000/api/hospitals/inventory', {
+      const response = await fetch('https://bloodbond-main.onrender.com/api/hospitals/inventory', {
         method: 'PUT',
         headers: { 
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -189,7 +189,7 @@ const HospitalDashboard = () => {
   const handleRequestUpdate = async (requestId, status, notes) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/hospitals/requests/${requestId}`,
+        `https://bloodbond-main.onrender.com/api/hospitals/requests/${requestId}`,
         { status, notes },
         { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
       );

@@ -162,7 +162,7 @@ const Signup = () => {
       console.log("Submitting data:", submitData);
 
       const endpoint = userType === "user" ? "register/user" : "register/hospital";
-      const response = await fetch(`http://localhost:5000/api/auth/${endpoint}`, {
+      const response = await fetch(`https://bloodbond-main.onrender.com/api/auth/${endpoint}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

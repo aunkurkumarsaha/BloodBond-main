@@ -22,7 +22,7 @@ const Chatbot = () => {
   useEffect(() => {
     const fetchBotData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/chatbot/data');
+        const response = await fetch('https://bloodbond-main.onrender.com/api/chatbot/data');
         const data = await response.json();
         setBotData(data);
       } catch (error) {

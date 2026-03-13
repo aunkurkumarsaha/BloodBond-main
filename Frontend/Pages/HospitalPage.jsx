@@ -35,7 +35,7 @@ const ReviewForm = ({ hospitalId, onReviewAdded }) => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/hospitals/${hospitalId}/reviews`, {
+      const response = await fetch(`https://bloodbond-main.onrender.com/api/hospitals/${hospitalId}/reviews`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -132,7 +132,7 @@ const RequestForm = ({ hospitalId }) => {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/hospitals/${hospitalId}/request-blood`,
+        `https://bloodbond-main.onrender.com/api/hospitals/${hospitalId}/request-blood`,
         {
           method: 'POST',
           headers: {
@@ -226,7 +226,7 @@ const HospitalPage = () => {
   useEffect(() => {
     const fetchHospitalData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/hospitals/${id}`, {
+        const response = await fetch(`https://bloodbond-main.onrender.com/api/hospitals/${id}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

@@ -26,7 +26,7 @@ const UserDashboard = () => {
 
     const fetchHospitals = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/hospitals", {
+        const response = await fetch("https://bloodbond-main.onrender.com/api/hospitals", {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
             'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ const UserDashboard = () => {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch("http://localhost:5000/api/users/profile", {
+        const response = await fetch("https://bloodbond-main.onrender.com/api/users/profile", {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -80,7 +80,7 @@ const UserDashboard = () => {
     const fetchBloodRequests = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch("http://localhost:5000/api/users/blood-requests", {
+        const response = await fetch("https://bloodbond-main.onrender.com/api/users/blood-requests", {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -101,7 +101,7 @@ const UserDashboard = () => {
 
     const fetchEmergencyRequests = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/emergency", {
+        const response = await fetch("https://bloodbond-main.onrender.com/api/emergency", {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
             'Content-Type': 'application/json'

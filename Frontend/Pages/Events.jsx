@@ -55,7 +55,7 @@ const Events = () => {
 
   const fetchCamps = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/camps");
+      const response = await fetch("https://bloodbond-main.onrender.com/api/camps");
       if (!response.ok) throw new Error("Failed to fetch");
       const data = await response.json();
       setCamps(data);
@@ -71,7 +71,7 @@ const Events = () => {
     setSubmitting(true);
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/api/camps", {
+      const response = await fetch("https://bloodbond-main.onrender.com/api/camps", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
